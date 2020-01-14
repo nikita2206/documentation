@@ -27,7 +27,7 @@ It helps you track your different indexes with a human-readable name.
 
 In the schema definition, each attribute has one or multiple of the following properties :
 
-* **identifier**: The unique identifier of a document (e.g `id`)
+* **identifier**: The unique [identifier of a document](/main_concepts/documents.md#documents-identifiers) (e.g `id`)
 * **indexed**: the search engine will search inside those fields.
 * **displayed**: Fields that will appear in the returned documents.
 * **ranked**: Ranked fields are used to create ranking rules.
@@ -100,6 +100,10 @@ This property is given to the attribute that contains the **unique key of each d
 If two documents added at the same time have the same ID, MeiliSearch will only save the last one.
 
 If a document is added when there is already a document with the same ID in MeiliSearch, it will be updated.
+
+::: warning
+**The identifier is mandatory**, and must [follow formatting rules](/main_concepts/documents.md#documents-identifiers).
+:::
 
 ::: tip
 Documents identifiers are always converted into strings. Only strings and integers are valid identifiers.
